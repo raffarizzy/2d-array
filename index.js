@@ -54,6 +54,24 @@ goBtn.addEventListener("click", function() {
             }
             menu.innerHTML = "--- LIHAT SEMUA NILAI IPA ---\n" + text4 + "0. Kembali";
             break;
+        case 5 :
+            activeMenu = 5;
+            let text5 = "";
+            for (let i = 0; i < array2D.length; i++) {
+                for (let j = 0; j < array2D[i].length; j++) {
+                    if (j == 0) {
+                        text5 += "Nama : " + array2D[i][j] + "\n";
+                    } else if (j == 1) {
+                        text5 += "Nilai B.Indo : " + array2D[i][j] + "\n";
+                    } else if (j == 2) {
+                        text5 += "Nilai Matematika : " + array2D[i][j] + "\n";
+                    } else if (j == 3) {
+                        text5 += "Nilai IPA : " + array2D[i][j] + "\n\n";
+                    }
+                } 
+            }
+            menu.innerHTML = "--- LIHAT SEMUA NILAI SISWA ---\n" + text5 + "0. Kembali";
+            break;
         case 0 :
             if (activeMenu >= 1) {
                 menu.textContent = 
