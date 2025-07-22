@@ -5,6 +5,7 @@ let activeMenu = 0;
 let goBtn = document.getElementById("goBtn");
 let menu = document.getElementById("menu");
 let input = document.getElementById("input");
+let labelInput = document.getElementById("labelInput");
 
 const array2D = [
     ["Raffa", 100, 100 ,100],
@@ -71,6 +72,34 @@ goBtn.addEventListener("click", function() {
                 } 
             }
             menu.innerHTML = "--- LIHAT SEMUA NILAI SISWA ---\n" + text5 + "0. Kembali";
+            break;
+        case 6 :
+            activeMenu = 6;
+            menu.innerHTML = "--- CARI NILAI SISWA ---\n" + 
+            "Ketik Nama <input id=\"inputNama\" type=\"string\" autocomplete=\"off\">" +
+            "<button id=\"cariBtn\">Cari</button>" +
+            "<p id=\"result\">Siswa Tidak Ditemukan</p>" +
+            "\n0. Kembali";
+
+            let cariBtn = document.getElementById("cariBtn");
+            cariBtn.addEventListener("click", function() {
+                let inputNama = document.getElementById("inputNama").value;
+                let idx = -1;
+                for (let i = 0; i < array2D.length; i++) {
+                    if (inputNama === array2D[i][0]) {
+                        idx = i;
+                        break;
+                    }
+                }
+                if (idx === -1) {
+                    document.getElementById("result").textContent = "Siswa Tidak Ditemukan";
+                } else {
+                    document.getElementById("result").textContent = "Nama : " + array2D[idx][0] + "\n" +
+                    "Nilai B.Indo : " + array2D[idx][1] + "\n" +
+                    "Nilai Matematika : " + array2D[idx][2] + "\n" +
+                    "Nilai IPA : " + array2D[idx][3];
+                }
+            });
             break;
         case 0 :
             if (activeMenu >= 1) {
