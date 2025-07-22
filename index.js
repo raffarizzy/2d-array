@@ -8,7 +8,8 @@ let input = document.getElementById("input");
 
 const array2D = [
     ["Raffa", 100, 100 ,100],
-    ["Andini", 100, 100, 100]
+    ["Andini", 100, 100, 100],
+    ["Ritard", 14, 24, 30]
 ]
 
 goBtn.addEventListener("click", function() {
@@ -29,14 +30,22 @@ goBtn.addEventListener("click", function() {
             menu.innerHTML = "--- LIHAT SEMUA SISWA ---\n" + text + "0. Kembali";
             break;
         case 2 :
-                activeMenu = 2;
-                let text2 = "";
-                for (let i = 0; i < array2D.length; i++) {
-                    text2 += array2D[i][1] + "\n";
-                }
-                menu.innerHTML = "--- LIHAT SEMUA NILAI BAHASA INDONESIA ---\n" + 
-                text2 + "0. Kembali";
-                break;
+            activeMenu = 2;
+            let text2 = "";
+            for (let i = 0; i < array2D.length; i++) {
+                text2 += array2D[i][1] + "\n";
+            }
+            menu.innerHTML = "--- LIHAT SEMUA NILAI BAHASA INDONESIA ---\n" + 
+            text2 + "0. Kembali";
+            break;
+        case 3 :
+            activeMenu = 3;
+            let text3 = "";
+            for (let i = 0; i < array2D.length; i++) {
+                text3 += array2D[i][2] + "\n";
+            }
+            menu.innerHTML = "--- LIHAT SEMUA NILAI MATEMATIKA ---\n" + text3 + "0. Kembali"
+            break;
         case 0 :
             if (activeMenu >= 1) {
                 menu.textContent = 
