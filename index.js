@@ -44,7 +44,15 @@ goBtn.addEventListener("click", function() {
             for (let i = 0; i < array2D.length; i++) {
                 text3 += array2D[i][2] + "\n";
             }
-            menu.innerHTML = "--- LIHAT SEMUA NILAI MATEMATIKA ---\n" + text3 + "0. Kembali"
+            menu.innerHTML = "--- LIHAT SEMUA NILAI MATEMATIKA ---\n" + text3 + "0. Kembali";
+            break;
+        case 4 :
+            activeMenu = 4;
+            let text4 = "";
+            for (let i = 0; i < array2D.length; i++) {
+                text4 += array2D[i][3] + "\n";
+            }
+            menu.innerHTML = "--- LIHAT SEMUA NILAI IPA ---\n" + text4 + "0. Kembali";
             break;
         case 0 :
             if (activeMenu >= 1) {
